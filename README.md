@@ -15,9 +15,13 @@
 + Arrays
 + Methods
 + Object Oriented-Programming
-+ + Classes
++ + Classes and Objects
 + + Inheritance
-+ + Interfaces
++ + Encapsulation
++ + + Access Modifiers
++ + + Getters and Setters
++ + Polymorphism
++ + + Interfaces
 
 ## About Programming
 **What is programming?**
@@ -379,7 +383,11 @@ The `this` keyword refers to the current instance of this class. It's optional t
 
 
 ## Encapsulation
-Encapsulation is the process of hiding the implementation details of a class from the outside world. Encapsulation is achieved through the use of access modifiers, such as `public`, `private`, `protected`, and `internal`, which controls the visibility of members of a class.
+Encapsulation is the process of hiding the implementation details of a class from the outside world. 
+
+### Access Modifiers
+
+Encapsulation is achieved through the use of access modifiers, such as `public`, `private`, `protected`, and `internal`, which controls the visibility of members of a class.
 
 + `public`: Public members are accessible from outside of the class, and inside of the class.
 + `private`: Private members are only accessible inside of the class, but not the other way around.
@@ -391,6 +399,38 @@ For example:
 public class Person 
 {
     private string name;
+    private int Age;
+
+    public Person(string name, int age) 
+    {
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+This class is accessible everywhere in the code, it has one field that is `private`.
+If you tried to access the `name` variable, you will get an error, saying that it's inaccessible to the outside of this class.
+```csharp
+Person person = new Person("John", 15);
+person.name = "Kowalski"; // Error
+```
+But what if we still need to change the value of a name while still keeping it as `private`?
+
+### Getters and Setters
+Getters and Setters are methods used in object-oriented programming to access and modify the values of private class fields from outside of a class.
+
+Getters are method that allows access to the value of a private field and Setters are method that allows to modify the value of a private field from outside of a class.
+```csharp
+public class Person 
+{
+    private string name;
+    private int Age;
+
+    public Person(string name, int age) 
+    {
+        this.name = name;
+        this.age = age;
+    }
 
     public string GetName() 
     {
@@ -401,15 +441,18 @@ public class Person
     {
         name = value;
     }
+
+    public string GetAge() 
+    {
+        return age;
+    }
 }
 ```
-This class is accessible everywhere in the code, it has one field that is `private`, and two methods to get the `name` variable and set the `name` variable with a `string` paramater called `value`.
-If you tried to access the `name` variable, you will get an error, saying that it's inaccessible to the outside of this class.
 ```csharp
-Person person = new Person();
-person.SetName("John"); // OK
-person.name = "Kowalski"; // Error
+Person person = new Person("John", 15);
+person.SetName("Kowalski"); // Error
 ```
+Getters and Setters are useful because they provide a controlled way to access and modify the state of an object. By making fields private, we can ensure that they can only be access or modified through the appropriate methods, which can help prevent bugs and maintain the integrity of the object's state. For instance, you can have a customized way of accessing the value or modifying the value, such as validation.
 
 ## Inheritance
 Inheritance is the process of extending an existing class by creating a new one. Inheritance is achieved using the `:` symbol.
