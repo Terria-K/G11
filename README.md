@@ -78,8 +78,10 @@ To declare a variable, you must specify the type, followed by name and value. Th
 
 ```csharp
 type variableName = value;
+```
 
-// Example
+For example
+```csharp
 int x = 42;
 int y = 30;
 Console.WriteLine(x + y); // 72
