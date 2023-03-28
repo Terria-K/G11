@@ -20,10 +20,13 @@
 + + Interfaces
 
 ## About Programming
+**What is programming?**
+
+Programming is the process of performing a particular computation for telling a computer to perform a task in order to solve a problem.
 
 
 ## About C#
-C# (C-Sharp) is a programming language developed by Microsoft that runs on .NET Runtime. C# is used to create a number of different programs and application including: desktop app with WinForms, web app with Blazor, mobile app with Xamarin, and video games with Unity or MonoGame.
+C# (C-Sharp) is a programming language developed by Microsoft in 2000 by Anders Hejlsberg. It is now running on the .NET Runtime. C# is used to create a number of different programs and application including: desktop app with WinForms, web app with Blazor, mobile app with Xamarin, and video games with Unity or MonoGame.
 
 It's a general purpose programming languages, and support multiple paradigms. It is known to have a strong relationship to Object Oriented Programming and is also known to be criticized as a copy of Java.
 
@@ -246,21 +249,63 @@ for (int i = 0; i < 5; i++)
 ```
 
 ## Arrays
+Array is a data structure which can store a collection of elements of a same type, which can be accessed by an index. In C#, the indexing starts in zero, which means you always start counting at zero instead of one.
+
+To create an array, you need to specify the type with a square brackets indicating it's an array of this type, followed by the name and values enclosed with a bracket.
 ```csharp
-int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 }; 
-int[] fixedNumbers = new int[4] { 0, 1, 2, 3 };
-Console.WriteLine(numbers[3]) // 4
+int[] numbers = { 1, 2, 3, 4, 5, 6 }; 
+```
+To access an element of an array, you use the index of the element in square brackets after the name of the array.
+```csharp
+int element = numbers[2]; // 3
+```
+To assign the value of a third element, you can also change the value of an element with square bracket after the name of an array.
+```csharp
+numbers[2] = 5;
+Console.WriteLine(numbers[2]) // 5
+```
+
+To loop an array in `for` loop, you specify the length of an array to the range.
+```csharp
+for (int i = 0; i < numbers.Length; i++) 
+{
+    int element = numbers[i];
+    Console.WriteLine(element);
+}
 ```
 
 ## Methods
-```csharp
-float Slope(float x1, float x2, float y1, float y2) 
-{
-    var x = x2 - x1;
-    var y = y2 - y1;
-    return y / x;
-}
+A method or a function is a block of code that contains a series of statements and is designed to perform a specific task. Think of it as a reusable code, you can call it multiple times in your code, and pass a parameters if a method accepts a specific parameters.
 
+To declare a method, you use the following syntax:
+```csharp
+access_modifier return_type method_name(parameter_list) 
+{
+    // Method Body
+}
+```
++ Access Modifier: is a visibility of a method. Common access modifier include `public`, `private`, `protected`, and `internal`. We will get back to this later.
++ Return Type: is a data type that the returns to. It's more like an output to the method after and it is likely to appear at the end of statement. If the method does not need to return any value, the return type must use `void`.
++ Method Name: is a name of a method.
++ Parameter List: is a list of inputs to the method. Parameters are separated by commas and are formed with `type name`. If a method does not take any parameters, leave it empty.
++ Method Body: contains the statements that are executed when the method is called.
+
+
+```csharp
+int Add(int x, int y) 
+{
+    return x + y;
+}
+```
+
+To call a method, use the following syntax:
+```csharp
+float m = Add(2, 4);
+```
+The following result is 6.
+
+The methods can be overloaded with an another type. Depending on the type, the method will be called with a correct type from a parameters.
+```csharp
 int Add(int x, int y) 
 {
     return x + y;
@@ -270,67 +315,137 @@ float Add(float x, float y)
 {
     return x + y;
 }
+```
+```csharp
+int x = Add(2, 1);
+float y = Add(4.5f, 2.5f);
+```
 
-void RunSlope() 
+# Object-Oriented Programming
+Object-Oriented Programming (OOP) is a programming paradigm that emphasizes the use of objects, which are instances of a classes, to represent and manipulate data. C# is a strongly-typed object-oriented language that supports many of the key features of OOP. 
+
+## Classes and Objects
+What are classes and objects? Classes and objects are the two main aspects of Object-Oriented programming. An objectis an instance of a class, and it contains both data and behaviour. 
+
+To create a class, use the `class` keyword to define the class followed by the name you decide. Optionally, you can put a access modifier before the `class`.
+
+```csharp
+class MyClass 
 {
-    var slope = Slope(2, 4.5f, 10, 20);
-    Console.WriteLine(slope);
+    // members
 }
 ```
 
-## Object Oriented Programming
+You can also declare a field inside of a class which are a variables that is part of a class itself, methods which can be called inside and outside of a class, and properties, we will get back to this later. 
 
-### Declaring Class
 ```csharp
 class Point 
 {
     public int x;
     public int y;
-}
 
-var point = new Point();
-point.x = 10;
-point.y = 20;
+    int AddTogether() 
+    {
+        return x + y;
+    }
+}
 ```
 
-## Access Modifiers
+To create an object, you use the `new` keyword and call the constructor of the class.
+```csharp
+Point point = new Point();
+```
+This creates a new instance of a `Point` class and assigns it to the variable named `point`.
+
+To change how constructor is defined inside of a class, you just write the constructor inside of a class like how you define a method but without the return type, the name must matched the name of the class. For example:
 ```csharp
 class Point 
 {
-    private int x;
-    private int y;
-
-    public Point(int x, int y) 
+    public int x;
+    public int y;
+    Point(int x, int y) 
     {
         this.x = x;
         this.y = y;
+    } 
+    // ...
+}
+```
+The `this` keyword refers to the current instance of this class. It's optional to put it before accessing the variable. It can be used to prevent name collision from a parameter.
+
+
+## Encapsulation
+Encapsulation is the process of hiding the implementation details of a class from the outside world. Encapsulation is achieved through the use of access modifiers, such as `public`, `private`, `protected`, and `internal`, which controls the visibility of members of a class.
+
++ `public`: Public members are accessible from outside of the class, and inside of the class.
++ `private`: Private members are only accessible inside of the class, but not the other way around.
++ `protected`: Protected members are only accessible inside of the class, and a class extending this class, we will get to that later.
++ `internal`: Internal members are only accessible only in one project.
+
+For example:
+```csharp
+public class Person 
+{
+    private string name;
+
+    public string GetName() 
+    {
+        return name;
+    }
+
+    public void SetName(string value) 
+    {
+        name = value;
     }
 }
-
-var point = new Point();
-point.x = 20; // ERROR
+```
+This class is accessible everywhere in the code, it has one field that is `private`, and two methods to get the `name` variable and set the `name` variable with a `string` paramater called `value`.
+If you tried to access the `name` variable, you will get an error, saying that it's inaccessible to the outside of this class.
+```csharp
+Person person = new Person();
+person.SetName("John"); // OK
+person.name = "Kowalski"; // Error
 ```
 
 ## Inheritance
+Inheritance is the process of extending an existing class by creating a new one. Inheritance is achieved using the `:` symbol.
+
+```csharp
+public class Student : Person 
+{
+    private int id;
+
+    public int GetID() 
+    {
+        return id;
+    }
+
+    public void SetID(int id) 
+    {
+        this.id = id;
+    }
+}
+```
+In this example, the `Student` class extends from the `Person` class, which means that it has access to all the `public` and `protected` members of the `Person` class. 
+
+```csharp
+Student student = new Student();
+student.SetID(2014241);
+student.SetName("Mikey");
+```
+
+## Polymorphism
+Polymorphism is the ability of objects to take multiple forms. It is related to inheritance, however it doesn't mean it's always inheriting, but it rather may be implementing. Polymorphism can be achieved through the use of `virtual` and `abstract` methods, as well as interfaces. Virtual methods can be overriden by derived classes, while abstract methods must be implemented by derived classes.
 ```csharp
 class Animal 
 {
-    public string Name;
-    public int Age;
-
-    public Animal(string name, int age) 
+    public virtual void MakeSound() 
     {
-        Name = name;
-        Age = age;
+        Console.WriteLine("The animal makes a sound");
     }
-
-    public void Eat() 
-    {
-        Console.WriteLine(Name + " ate some food");
-    } 
 }
 
-class Dog : Animal 
+class Dog : Animal
 {
     public Dog(string name, int age) : base(name, age) {}
 
@@ -338,66 +453,14 @@ class Dog : Animal
     {
         Console.WriteLine("Bite!");
     }
-}
 
-class Cat : Animal 
-{
-    public Cat(string name, int age) : base(name, age) {}
-
-    public void Claws() 
+    public override void MakeSound() 
     {
-        Console.WriteLine("Cat shows their claws");
-    }
-}
-
-var dog = new Dog("Puppy", 3);
-var cat = new Cat("Kitty", 1);
-
-dog.Bite();
-cat.Claws();
-
-dog.Eat();
-cat.Eat();
-```
-
-## Interfaces
-```csharp
-public interface IJump 
-{
-    void Jump(float heights);
-}
-
-public interface IRun
-{
-    void Run(float speed);
-}
-
-public interface ISwim
-{
-    void Swim();
-}
-
-class Dog : Animal, ISwim, IRun
-{
-    public Dog(string name, int age) : base(name, age) {}
-
-    public void Bite() 
-    {
-        Console.WriteLine("Bite!");
-    }
-    
-    public void Run(float speed) 
-    {
-        Console.WriteLine(Name + " run as fast as " + speed + " m speed");
-    }
-
-    public void Swim() 
-    {
-        Console.WriteLine(Name + " Swim in the water");
+        Console.WriteLine("The dog barks!");
     }
 } 
 
-class Cat : Animal, IRun, IJump
+class Cat : Animal
 {
     public Cat(string name, int age) : base(name, age) {}
 
@@ -406,14 +469,59 @@ class Cat : Animal, IRun, IJump
         Console.WriteLine("Cat shows their claws");
     }
 
-    public void Run(float speed) 
+    public override void MakeSound() 
     {
-        Console.WriteLine(Name + " run as fast as " + speed + " m speed");
-    }
-
-    public void Jump(float heights) 
-    {
-        Console.WriteLine(Name + " Jumps as high as " + heights + "ft");
+        Console.WriteLine("The cat meows!");
     }
 }
 ```
+If we declare and use the objects with these classes, we get a different output from a different class, even if they are derived from the same class.
+
+```csharp
+Dog dog = new Dog();
+Cat cat = new Cat();
+dog.MakeSound();
+cat.MakeSound();
+
+TakeAnimal(cat);
+
+void TakeAnimal(Animal animal) 
+{
+    // Take an animal
+}
+```
+
+We see that the `TakeAnimal()` method accepts only an `Animal` type as a parameter, but we can still pass a variable that is a type of `Cat`. That is because `Cat` is derived from a class `Animal`, that is why we can use it as an input of this method.
+
+### Interfaces
+Interfaces is a blueprint for a set of methods that a class can implement. Interfaces are declared using `interface`, followed by the name and a set of method. Methods inside of an `interface` should be empty, although the default implementation is still allowed.
+```csharp
+interface IShape 
+{
+    float GetArea();
+}
+```
+To implement an interface, a class must provide implementations for all the methods. For example, here is a class that implements the `IShape` interface.
+```csharp
+using System;
+
+class Circle : IShape 
+{
+    private float radius;
+    public Circle(float radius) 
+    {
+        this.radius = radius;
+    }
+
+    public float GetArea() 
+    {
+        return Math.PI * radius * radius;
+    }
+}
+```
+```csharp
+IShape shape = new Circle(5);
+float area = shape.GetArea();
+Console.WriteLine("Area: " + area); // Output: Area: 78.5398163397448
+```
+Like inheritance, implementation can also be used with Polymorphism which you can also passed the class that implements an interface into the method that accepts the interface that the class implements to.
