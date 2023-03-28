@@ -170,7 +170,7 @@ Console.WriteLine("Name is: " + name);
 A conditional statement used to compare values and tell the program to execute the action depending on whether a condition is true or false.
 It can be used in variety of ways for example, checking if the value is greater, less than or equal, or for validating an email and password.
 
-If-Else statements helps you to compare a value and execute a specific block. 
+If-Else statements helps you to compare a value and execute a specific block. Logical and Comparison operators can be used for conditions. 
 + If statement will check if the condition is true and execute the block beneath it, 
 + Else statement check if the previous If statement is false and execute the block beneath it.
 + Else-If Statement check if the previous If statement is false, check if the condition is true, and execute the block beneath it.
@@ -216,18 +216,33 @@ switch (x)
 
 
 ## For and While Loops
+Loops can execute a block of code repeatedly. Loops are usually handled with the condition to be able to stop the execution when the condition is reached to prevent a slight logical errors such as infinite loops. Loops are handy because it saves you a lot of time to write code, and make code more readable. There are two ways to declare a loop, one that uses a `while` loop, and the other uses a `for` loop. These two has a syntax differences, but they are technically the same. While `while` loops has only 1 statement and accepts only a condition, `for` loops has three statements and can define a value, a range condition on when the loop will going to stop, and increment the value that the for loop defined after the execution.
+
 ```csharp
-Console.WriteLine("Counting 1 to 10");
-for (int i = 0; i < 5; i++) 
-{
-    Console.WriteLine(i);
-}
 int i;
 while (i < 5) 
+{
+    i++;
+    Console.WriteLine(i);
+}
+```
+There is also a `do` statement for `while` loop which will be executed before the condition and the loop started.
+```csharp
+int i;
+do 
 {
     Console.WriteLine(i);
     i++;
 }
+while (i < 5);
+```
+
+```csharp
+for (int i = 0; i < 5; i++) 
+{
+    Console.WriteLine(i);
+}
+
 ```
 
 ## Arrays
