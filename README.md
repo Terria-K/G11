@@ -2,26 +2,26 @@
 
 
 ## Plan
-+ About Programming
-+ About C#
-+ Hello World
-+ Variables and Data Type
-+ Operators
-+ Input/Output operation
-+ Conditional Statements
-+ Switches
-+ For/While loops
-+ Switch
-+ Arrays
-+ Methods
-+ Object Oriented-Programming
-+ + Classes and Objects
-+ + Inheritance
-+ + Encapsulation
-+ + + Access Modifiers
-+ + + Getters and Setters
-+ + Polymorphism
-+ + + Interfaces
++ [About Programming](#about-programming)
++ [About C#](#about-c)
++ [Hello World](#hello-world)
++ [Variables and Data Type](#variables-and-data-type)
++ [Operators](#operators)
++ [Input/Output operation](#inputoutput-operation)
++ [Conditional Statements](#conditional-statements)
++ [Switches](#switches)
++ [For and While loops](#for-and-while-loops)
++ [Switch](#switches)
++ [Arrays](#arrays)
++ [Methods](#methods)
++ [Object Oriented-Programming](#object-oriented-programming)
++ + [Classes and Objects](#classes-and-objects)
++ + [Inheritance](#inheritance)
++ + [Encapsulation](#encapsulation)
++ + + [Access Modifiers](#access-modifiers)
++ + + [Getters and Setters](#getters-and-setters)
++ + [Polymorphism](#polymorphism)
++ + + [Interfaces](#inheritance)
 
 ## About Programming
 **What is programming?**
