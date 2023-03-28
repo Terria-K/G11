@@ -10,13 +10,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- <Compile Include="src/HelloWorld.cs"/> -->
-    <Compile Include="src/Array.cs"/>
-    <!-- <Compile Include="src/InputOutput.cs"/> -->
-    <!-- <Compile Include="src/Operators.cs"/> -->
-    <!-- <Compile Include="src/Conditional.cs"/> -->
-    <!-- <Compile Include="src/Loops.cs"/> -->
-    <!-- <Compile Include="src/Switch.cs"/> -->
+    <!-- <Basics/> -->
+
+    <!-- <Compile Include="src/Basics/HelloWorld.cs"/> -->
+    <!-- <Compile Include="src/Basics/Operators.cs"/> -->
+    <!-- <Compile Include="src/Basics/InputOutput.cs"/> -->
+    <!-- <Compile Include="src/Basics/Conditional.cs"/> -->
+    <!-- <Compile Include="src/Basics/Switch.cs"/> -->
+    <!-- <Compile Include="src/Basics/Loops.cs"/> -->
+    <!-- <Compile Include="src/Basics/Array.cs"/> -->
+    <Compile Include="src/Basics/Method.cs"/>
+
+    <!-- <OOP/> -->
+
   </ItemGroup>
 
 </Project>

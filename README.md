@@ -12,7 +12,6 @@
 + [Conditional Statements](#conditional-statements)
 + [Switches](#switches)
 + [For and While loops](#for-and-while-loops)
-+ [Switch](#switches)
 + [Arrays](#arrays)
 + [Methods](#methods)
 + [Object Oriented-Programming](#object-oriented-programming)
