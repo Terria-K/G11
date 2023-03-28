@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="./src/**/*.cs"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- <Compile Include="src/HelloWorld.cs"/> -->
+    <!-- <Compile Include="src/Array.cs"/> -->
+    <!-- <Compile Include="src/InputOutput.cs"/> -->
+    <!-- <Compile Include="src/Operators.cs"/> -->
+    <!-- <Compile Include="src/Conditional.cs"/> -->
+    <!-- <Compile Include="src/Loops.cs"/> -->
+    <Compile Include="src/Switch.cs"/>
+  </ItemGroup>
+
+</Project>
