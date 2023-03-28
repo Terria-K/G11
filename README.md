@@ -6,6 +6,7 @@
 + [About C#](#about-c)
 + [Hello World](#hello-world)
 + [Variables and Data Type](#variables-and-data-type)
++ + [Inferred Type](#inferred-type)
 + [Operators](#operators)
 + [Input/Output operation](#inputoutput-operation)
 + [Conditional Statements](#conditional-statements)
@@ -95,6 +96,19 @@ char c = 'c';
 string h = "Hey World!";
 bool b = true;
 ```
+
+### Inferred Type
+Inferred type or implicit type is a type that determined the type of a value at compile-time based on the expression used to initialize it. For instance, the `var` keyword is used to declare variables with inferred types. 
+
+For example, instead of explicitly declaring variable type, we can use the `var` instead:
+```csharp
+var greeting = "Hello World";
+```
+It's equivalent into this code:
+```csharp
+string greeting = "Hello World";
+```
+Inferred type can make the code shorter and easier to read, however, it's important to use them carefully, as they can also make the code harder to understand. It's worth noting that while `var` can be used to declare local variables, it cannot be used for method parameters, return types or class fields. In those cases, the type must be explicitly specified.
 
 ## Operators
 Operators are used to perform operations on a variables and values. There are 4 types of operators.
