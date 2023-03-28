@@ -19,9 +19,13 @@
     <!-- <Compile Include="src/Basics/Switch.cs"/> -->
     <!-- <Compile Include="src/Basics/Loops.cs"/> -->
     <!-- <Compile Include="src/Basics/Array.cs"/> -->
-    <Compile Include="src/Basics/Method.cs"/>
+    <!-- <Compile Include="src/Basics/Method.cs"/> -->
 
     <!-- <OOP/> -->
+    <!-- <Compile Include="src/OOP/Classes/**/*.cs"/> -->
+    <!-- <Compile Include="src/OOP/Encapsulation/**/*.cs"/> -->
+    <!-- <Compile Include="src/OOP/Inheritance/**/*.cs"/> -->
+    <Compile Include="src/OOP/Polymorphism/**/*.cs"/>
 
   </ItemGroup>
 

@@ -16,10 +16,10 @@
 + [Methods](#methods)
 + [Object Oriented-Programming](#object-oriented-programming)
 + + [Classes and Objects](#classes-and-objects)
-+ + [Inheritance](#inheritance)
 + + [Encapsulation](#encapsulation)
 + + + [Access Modifiers](#access-modifiers)
 + + + [Getters and Setters](#getters-and-setters)
++ + [Inheritance](#inheritance)
 + + [Polymorphism](#polymorphism)
 + + + [Interfaces](#inheritance)
 
