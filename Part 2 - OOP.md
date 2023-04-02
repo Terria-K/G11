@@ -7,6 +7,43 @@ A --> C[Student]
 C --> D[Class Officer]
 ```
 
+In order to understand **what object oriented programming is**, it's best to first understand **what objects are**.
+
+In order to understand **what objects are**, it's best to first understand **what primitive data types are**.
+
+## Primitive Data 
+**Primitive data types** store **single, simple values**.
+
+Examples Include:
++ Byte 
++ Boolean
++ Int
++ Double
++ Float
++ Char
+
+These primitives types only stores a single piece of data of a certain kind.
+
+## Objects
+Objects are **instances of a class**, Classes are **templates for objects**.
+
+```csharp
+class Car
+{
+    int x, y;
+    int r, g, b, a;
+    void Drive() { }
+}
+```
+
+**Drive()** is specific to Car, as other objects does have a different behaviour.
+X and Y, and R, G, B and A are not initiliazed as **different instances** of a Car will have **different values** for these variables.
+
+// Images of a four car
+
+// Overview
+**Object oriented programming** helps programmers create complex programs by **grouping together related data and functions**.
+
 We will explain OOP using its four main principles:
 + Encapsulation
 + Abstraction
@@ -207,3 +244,40 @@ B --> D[BMW]
 The main benefit of dynamic polymorphism is that is allows you to write more methods in the super class without having to include many conditional statements such as if, else if, and else statements or even switches, being used when the method is called.
 
 ## Static Polymorphism
+Static polymorphism occurs during **compile-time** rather than runtime. This refers to when multiple **methods with the same name but different arguments** are defined in the same class.
+
+Ways to differentiate methods of the same name:
++ Different number of parameters.
++ Different types of parameters.
++ Different order of parameters.
+
+
+This is known as **method overloading**. Despite the methods having the same name, their signature are different due to their different arguments.
+
+```
+class Car
+```
+ID | Method 
+------------|-----------------
+1 | Drive(int spd, string dest);
+2 | Drive(int spd, int dist);
+3 | Drive(string dest, int spd);
+
+In each of this three example methods, the method signature is different, despite the method having the same name. Therefore, the computer is able to tell the methods apart when the program is being compiled. 
+
+```csharp
+myCar.Drive(30, "Restaurant");
+myCar.Drive(45, 150);
+myCar.Drive("School", 40);
+```
+
+Keep in mind that **method overloading can cause trouble** if you do not keep straight **which of the method implementation you would like to execute and what form of the argument is required to do so**. 
+
+Using the incorrect argument may not cause an error if it matches another form of the method. This can cause an issue as you do not have a feedback to the compiler and tends to cause bugs.
+
+
+// Overview
+
+Overall, polymorphism allows methods to take on many different forms. 
+
+When utilizing polymorphism and method overloading, be sure that you are calling the correct form of the method.
