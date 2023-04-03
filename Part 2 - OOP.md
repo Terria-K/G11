@@ -40,7 +40,18 @@ class Car
 **Drive()** is specific to Car, as other objects does have a different behaviour.
 X and Y, and R, G, B and A are not initiliazed as **different instances** of a Car will have **different values** for these variables.
 
-// Images of a four car
+To create an object, you use `new` keyword
+```csharp
+var car1 = new Car();
+car.x = 20;
+car.y = 40;
+
+var car2 = new Car();
+car.x = 40;
+car.y = 10;
+```
+
+// Images of a two car
 
 // Overview
 **Object oriented programming** helps programmers create complex programs by **grouping together related data and functions**.
