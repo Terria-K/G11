@@ -67,7 +67,7 @@ We will explain OOP using its four main principles:
 # Encapsulation
 Encapsulation refers to **bundling data with methods** that can operate on that data within the class.
 
-Encapsulation is the process of **hiding the implementation details of a class from the outside world**, preventing anything outside that class from directly interacting with it such as accessing and modifying. This does not mean that members of other classes cannot interact at all with the variables for another object, instead the members of other classes **can interact with the attributes of another object through its method**. 
+Encapsulation is the process of **hiding the implementation details of a class from the outside world**, preventing anything outside that class from directly interacting with it such as accessing and modifying. This does not mean that members of other classes cannot interact at all with the variables for another object, instead the members of other classes **can interact with the variables of another object through its method**. 
 
 ## Methods
 
