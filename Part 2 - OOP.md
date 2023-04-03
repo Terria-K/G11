@@ -81,7 +81,7 @@ B[Setters] --> D[To modify an information]
 
 Doing this, you have provided a controlled way to access and modify the state of an object. By making fields private, we can ensure that they can only be access or modified through the appropriate methods, which can help prevent bugs and maintain the integrity of the object's state.
 
-For example, if we have a role-playing game, I may have a two attributes for the player's health. a `maxHealth` and a `currentHealth`. When the character levels up, I may have their `maxHealth` increased as well. When this happen, I would want the `currentHealth` to be set to the `maxHealth`. Instead of changing it both of these values directly, I can define a new method called `SetMaxHealth()` method such as the `currentHealth` is set to the `maxHealth` when the `maxHealth` has increased.
+For example, if we have a role-playing game, I may have a two variables for the player's health. a `maxHealth` and a `currentHealth`. When the character levels up, I may have their `maxHealth` increased as well. When this happen, I would want the `currentHealth` to be set to the `maxHealth`. Instead of changing it both of these values directly, I can define a new method called `SetMaxHealth()` method such as the `currentHealth` is set to the `maxHealth` when the `maxHealth` has increased.
 
 ```mermaid
 graph LR
