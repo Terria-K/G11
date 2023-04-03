@@ -43,14 +43,14 @@ X and Y, and a color are not initiliazed as **different instances** of a Car wil
 To create an object, you use `new` keyword
 ```csharp
 var car1 = new Car();
-car.x = 20;
-car.y = 40;
-car.color = "red";
+car1.x = 20;
+car1.y = 40;
+car1.color = "red";
 
 var car2 = new Car();
-car.x = 40;
-car.y = 10;
-car.color = "green";
+car2.x = 40;
+car2.y = 10;
+car2.color = "green";
 ```
 
 // Images of a two car
