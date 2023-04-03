@@ -32,23 +32,25 @@ Objects are **instances of a class**, Classes are **templates for objects**.
 class Car
 {
     int x, y;
-    int r, g, b, a;
+    string color;
     void Drive() { }
 }
 ```
 
 **Drive()** is specific to Car, as other objects does have a different behaviour.
-X and Y, and R, G, B and A are not initiliazed as **different instances** of a Car will have **different values** for these variables.
+X and Y, and a color are not initiliazed as **different instances** of a Car will have **different values** for these variables.
 
 To create an object, you use `new` keyword
 ```csharp
 var car1 = new Car();
 car.x = 20;
 car.y = 40;
+car.color = "red";
 
 var car2 = new Car();
 car.x = 40;
 car.y = 10;
+car.color = "green";
 ```
 
 // Images of a two car
