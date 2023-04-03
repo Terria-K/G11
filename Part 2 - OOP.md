@@ -1,4 +1,5 @@
 # Introduction to Object-Oriented Programming
+Object-Oriented Programming (OOP) is a programming paradigm that emphasizes the use of objects, which are instances of a classes, to represent and manipulate data.
 
 ```mermaid
 graph TD
@@ -92,8 +93,6 @@ void SetCurrentHealth(int newHealth)
 
 You may also want some variables to be **"read only"** from the outside of the class, which means you will only **define a getter method but not the setter method**. The variable can only be referenced, **not changed**.
 
-
-// TODO Some example here about validation with getter method
 
 ## Information Hiding
 Information hiding, or keeping the data of one classes from external classes hidden. It helps you to **keep control of your program** and prevent **from becoming too complicated**.
