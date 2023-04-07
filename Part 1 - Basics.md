@@ -456,3 +456,45 @@ It is weird and confusing, but this is the one that you have to memorize and com
 
 ### Creating an array
 To create an array, you insert the elements you would like in the array **immediately**. Or you create an array with a specific size, but choose to **add elements later**.
+
+When we create array, their sizes are **FINAL**. It cannot **increased** or **decreased** in size through conventional methods. This is what allows us to easily access their indexes.
+
+When initializing an array, you must determine its type and they all have to be the same type. Which means you cannot mix and matches the type of the array. As example of mix and match:
+
+Username|
+-------|
+Sean
+Mike
+10
+Isaac
+True
+False
+
+Which are not allowed in the array.
+
+### Multi-dimensional Arrays
+Putting an **array inside an array** is known as 2 dimensional array, or multi-dimensional array.
+
+Index | Names | | | | |
+------| -------|--|--|--|--|
+0| Alex | Arnold | Ael | Ash | Ariel
+1| Bob | Ben | Billy | Boan | Baly
+2| Clint | Carry | Cal | Colton | Crab
+
+To index 2D arrays, we use 2 numbers. **First number** is the row, **second number** is the column.
+
+Index | 0 | 1 | 2 | 3 | 4 |
+------| -------|--|--|--|--|
+0| Alex | Arnold | Ael | Ash | Ariel
+1| Bob | Ben | Billy | Boan | Baly
+2| Clint | Carry | Cal | Colton | Crab
+
+```mermaid
+graph LR
+A[0, 2] --> B[Clint]
+C[1, 1] --> D[Ben]
+```
+
+You can have more dimension to an array, but 2 dimensional array is fairly enough for programming.
+
+## Loops
