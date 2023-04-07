@@ -717,3 +717,215 @@ Arguments are a way for programmers to have one function that **can do many diff
 Adds **variability** to programming and helps **diversify** your code.
 
 ### Functions without arguments
+Think of the scenario where you want something that **prints our profile**.
+
+You may have a code like this:
+```java
+System.out.println("Name: " + name)
+System.out.println("User Name: " + userName)
+System.out.println("Age: " + age)
+System.out.println("City: " + city)
+```
+And you want to do this like 5 or more times in your application.
+
+You might want to pack it in the function which we can reuse and prints our profile without having to print it all manually.
+
+```java
+void printProfile() {
+    System.out.println("Name: " + name)
+    System.out.println("User Name: " + userName)
+    System.out.println("Age: " + age)
+    System.out.println("City: " + city)
+}
+```
+And use it without having to write everything manually:
+```mermaid
+graph TD
+A["printProfile()"]
+B["printProfile()"]
+C["printProfile()"]
+```
+
+### Return values
+Functions can either **return** variables or not. Returning something simply means the function will **return back to the user** something. A String?, Integer?, Array?, etc.
+
+Returning functions **MUST** be returned **INTO** something, usually a **variable** but can also be printed.
+
+```mermaid
+graph TD
+A["Max(int, int);"] --> B["int maxNumber = Max(6, 10);"]
+A --> C["System.out.println(Max(6, 10));"]
+```
+
+Another example, if we have our own function which is `combineString()` which combine two string in an arguments together, and return them into a singular string.
+```mermaid
+graph TD
+A["combineString(Hello World, World)"] --> B[String combinedString] --> C[Hello World]
+```
+
+We can also use the returned value of a function to be an arguments. Which is calling a function inside of an arguments.
+
+```java
+String combinedString = combineString("Hello ", combineString(" World", ", Love You"));
+System.out.println(combinedString) // Hello World, Love You
+```
+
+### No Return or No Arguments
+A function which takes **no arguments** and returns **no values** is similar to the `printProfile()` function. It cannot be set to any variable since it returns no value.
+
+```java
+void printProfile() {
+    System.out.println("Name: " + name)
+    System.out.println("User Name: " + userName)
+    System.out.println("Age: " + age)
+    System.out.println("City: " + city)
+}
+```
+
+### Adaptability of functions
+Functions are super useful for making **large changes** to your code **easily**.
++ Each function call is just a **copy** of that functions code.
++ Changing the function will change **all future calls** of that function.
+
+### How can we import functions?
+How can we use already created functions to our benefit, without creating them ourselves?
+
+Imagine if we want to build a house, for that we need to plant and cut down a trees, make your own tools and nails from scratch. But why do that? When you can just simply go to our local home depot and buy these materials that are already made it for you.
+
+**Importing functions** allows you to gain access to libraries of **pre-made functions**. These are **thousands** of already made functions at your disposal.
+
+In each programming languages, it allows you to use an `import` keyword, to `import` certain things from other packages and libraries.
+
+Libraries are **collection** of functions that all have the **same theme**. Math library, Data analysis library, etc.
+
+
+### Creating your own functions
+There are going to be moments where you want to **create** your own functions. There are **Basic rules** you must follow.
+
+Function naming conventions follow **Variable naming convention**.
++ Cannot be two words.
++ Often follow **PascalCase** structure. (or in Java, just **camelCase**).
+
+**You cannot use these:**
+```java
+public void add Numbers() {}
+```
+
+```java
+public void add-Numbers() {}
+```
+
+**You can use this:**
+```java
+public void addNumbers() {}
+```
+
+Each language **differentiates** how you tell the computer you are about to make a function.
+
+In **Java**, first you have to define the function's **scope**, which is `public`, `private`, or `protected`. Then determine its **return type**, if the function does not return any value, just mark it as `void`. Next is the **function name**. And then, the set of parenthesis where you put your arguments.
+
+The way to put an arguments is by typing the ype first, followed by the name. If you want to put more than one arguments, you will have to put comma.
+
+Example of a function that returns a value with two arguments:
+```java
+public String combineString(String first, String second) {
+    return first + second;
+}
+```
+Example of a function that doesn't return any value:
+```java
+public void printHello() {
+    System.out.print("Hello");
+}
+```
+
+There is some differences between in other language to create a function, for example in python, you have to write `def`, short for define, followed by the **function name** and a set of parenthesis. In python, there is no need for type if we want to add more arguments to it and a return value.
+
+```python
+def printHello():
+    print("Hello")
+
+def add(x y):
+    return x y
+```
+
+### Calling a functions you made
+When you **call** a function, you **HAVE** to pass in it's designated variables types.
+
+Example calling if we define an `add` function which takes two integers:
+
+```java
+int add(int x, int y) {
+    return x + y;
+}
+```
+
+We call it exactly with the given arguments:
+```java
+int x = add(20, 10); // 30
+int y = add(10, 10); // 20
+```
+
+If we put a wrong type to the function, we will get an error.
+
+### Returning functions
+The most important thing to remember about making functions that returns variables is that **no matter what** path your code takes, it **MUST** return a variable.
+
+Let's say you have a slope function which will take **4 floats** as an **argument** and also **float** as a return type.
+
+```java
+public float slope(float x1, float y1, float x2, float y2) {
+    float x = x2 - x1;
+    float y = y2 - y1
+    return y / x
+}
+```
+It would be very easy to write it when there's only one path to the function.
+
+However, if we have like many path in the function, we must also have to **return** in that path as well.
+
+For example, if we want to congratulate our player by having a score of 10 in a game:
+
+```java
+public String congratulatePlayer() {
+    if (playerScore > 10) {
+        return "Good Job!";
+    } else {
+
+    }
+}
+```
+
+This code will not compile, and will result a compilation error, because we did not return all of possible path that the function could return. To fix this, we return all of the possible path.
+
+```java
+public String congratulatePlayer() {
+    if (playerScore > 10) {
+        return "Good Job!";
+    } else {
+        return "Keep Trying!";
+    }
+    // Does not need to return here since "else" take care of it.
+}
+```
+
+Important to take note here is that you **cannot** return one type of variable if you have already defined the function to return **another type**.
+
+### Importing libraries
+Importing **libraries** is as simple as using an **import statement**, usually consists of the word "`import`" followed by the **library** you would like to import.
+
+```java
+import java.util.Scanner;
+```
++ **java**: is a library.
++ **util**: is a package that is a smaller set of functions and methods to help differentiate between the thousands of functions contains in a library.
++ **Scanner**: is a class which allows us to read information from the user. It comes from the package of a java library.
+
+If you don't know what **specific classes** you want to pull a method from, you can use **"*"**, and **all classes will be imported** from the package you like.
+```java
+import java.util.*;
+```
+If you are only using **one or two classes** from a package, it would be a waste of computing power to import the **entire library**.
+
+### Finding functions to import
+A simple Google Search will tell you if your **programming language** has a package that can fit your needs. If not, there are ways to **download additional packages**.
