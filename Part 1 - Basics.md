@@ -497,4 +497,103 @@ C[1, 1] --> D[Ben]
 
 You can have more dimension to an array, but 2 dimensional array is fairly enough for programming.
 
+Example code of using an array
+```java
+int[] arr = { 20, 10, 40, 50 };
+System.out.println(arr[2]); // 40
+
+String[] names = { "Alex", "Ash", "Ariel" };
+System.out.println(names[1]); // Ash
+
+int[][] moreNames = { 
+    { "Alex", "Arnold", "Ash", "Ariel" },
+    { "Bob", "Ben", "Billy", "Boan" },
+    { "Clint", "Carry", "Cal", "Crab" },
+};
+System.out.println(moreNames[1][2]); // Billy
+```
+
 ## Loops
+How we can have a code that repeat a block without repeating to write more lines of code.
+
+We could simply loop the code over and over again.
+
+### What is a Loop?
+A **Loop** is a **statement that is used to run certain instructions repeatedly**. Very useful for repeated sections of the code.
+
+If we wanted to print something 15 times, we could use 15 print statements.
+
+```java
+System.out.println("Hello World");
+System.out.println("Hello World");
+System.out.println("Hello World");
+System.out.println("Hello World");
+System.out.println("Hello World");
+System.out.println("Hello World");
+System.out.println("Hello World");
+// ..
+```
+
+Or we could use a loop, allows us to repeat parts of code multiple times.
+
+```java
+for (int i = 0; i < 15; i++) {
+    System.out.println("Hello World");
+}
+```
+
+### For Loops
+For loops is used when you would like to carry out a certain set of instructions **numerous times**.
+
+Consists of **3 parts**
++ An **integer value**
++ A **conditional statement** to must be evaluate to exit the loop.
++ An operation to **modify** the integer value **after** the instructions inside of the loop are completed.
+
+```mermaid
+graph TD
+A[int i = 0]
+B[i < 15]
+C[i++]
+```
+
+### Caution:
+When using a for loop, you **MUST** make sure you set up a condition that, **given the initial integer** value and the **operation**, will at some point be met. Otherwise, it will cause an **infinite loop**.
+
+```java
+for (int i = 10; i > 0; i++) {}
+```
+
+An integer starting at 10, and only increasing will never be less than 0.
+
+### Foreach Loop
+Foreach loop is used for **iterating** through entire **arrays** or **lists** by going through each **element** in the array and carry out a **set of instructions** for each value.
+
+Useful for **performing operations** across **entire collections** of data.
+
+Example pseudocode:
+```
+seq = [18, 20, 32]
+for each x of seq
+    print x
+end
+```
+Example in Java:
+```java
+int[] seq = { 18, 20, 32 };
+for (int s : seq) {
+    System.out.println(s);
+}
+```
+
+### While loop
+While loop will **continually** carry out its instructions while **a conditional statement** given to it is true. Similar to a for loop, but simplier.
+
+It can sometimes be used to purposely create an **infinite loop**.
+
+```mermaid
+graph TD
+A["while (x == 0)"]
+B["while (x < 10)"]
+C["while (score == highscore)"]
+```
