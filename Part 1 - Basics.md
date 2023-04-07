@@ -597,3 +597,123 @@ A["while (x == 0)"]
 B["while (x < 10)"]
 C["while (score == highscore)"]
 ```
+
+Example of using while loop as a for loop:
+```java
+int i = 0;
+while (i < 15) {
+    System.out.println("Hello World");
+    i++;
+}
+```
+
+Example for purposely using a infinite loop for a game:
+```java
+while (true) {
+    playGame();
+}
+```
+
+This line of code runs a game infinitely in a loop, which can be also called a game loop.
+
+### Do-While loop
+Do-While loop functionality similar to a while loop, however will **always** carry out instructions **AT LEAST ONCE**.
+
+Instructions inside loop will run once **before checking the conditional statement**.
+
+// Example image of do while loop
+
+```java
+int x = 0;
+do {
+    System.out.println("Hello World");
+    x++;
+} while (x < 5);
+```
+
+// Overview
+
+Benefits of **Loops**
++ Perform operations many times **in a row**.
++ Able to **iterate** through arrays and lists.
++ Decrease **clutter** of your code.
+
+## Functions
+How can we reuse code to make our program more space-sufficient and easy to read?
+
+We've actually been using **functions** the whole time, one of which is the **print functions**, and **basic math operators**.
+
+```java
+public static void main(String[] args) {
+    System.out.println("Hello World");
+    int x = 10 + 20;
+}
+```
+
+### What are functions?
+A **function** is a block of code that can be called easily by calling its name. Depending on the type of function, **may do something** in return.
+
+Can be called **numerous times**, and in **numerous places**. Like wrapping code into a **present** and giving it a name.
+
+We **"call"** the print **function**, and enter in what we want to be printed to the console **inside the parenthesis**.
+```java
+System.out.println("This will be printed");
+```
+
+Behind the scenes, there is **more code**, which takes care of printing our message to **the console**, **abstracts** all that code down to a **single line**.
+
+Functions serve **many purposes**, used to **recycle** sections of code which serve the same purpose, used for **equations** you want to allow multiple inputs of, and used to save **space** within your program.
+
+```calculus
+f(x) = 2x^2 + 3x + 5
+```
+
+```java
+float f(float x) {
+    return Math.pow(2 * x, 2) + (3 * x) + 5;
+}
+```
+
+There are **thousands** of types of function that built for us, including on what we use on the example before, the `Math.pow()`. Often times you will just **import** the ones you need in your program.
+
+// images
+
+There are 4 different **types** of **functions**.
++ Separated by whether or not they **take in arguments**.
++ Separated by whether or not they **return values**.
+
+```mermaid
+graph LR
+A[Functions] --> B[Takes in Arguments]
+A --> C[Doesn't take in arguments]
+B --> D[Return values]
+B --> E[Return no values]
+C --> F[Return values]
+C --> G[Return no values]
+```
+
+### Function with arguments
+Arguments are **variables** we **pass into a function** in order to be manipulated and then either:
++ **Returned** back to us.
++ **Printed** to the console.
++ Used in another **operation**.
+
+Let's look at the **Max function**:
+```java
+int maxNumber = Math.max(1, 100);
+int maxNumber = Math.max(60, 2);
+int maxNumber = Math.max("Steve", "Max");
+```
+```
+maxNumber = 100
+maxNumber = 60
+ERROR: Arguments expected Integer, found String.
+```
+
+It takes **two arguments** (two **integers**) and returns the **higher** one.
+
+Arguments are a way for programmers to have one function that **can do many different things**. 
+
+Adds **variability** to programming and helps **diversify** your code.
+
+### Functions without arguments
